@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                  // Gerar código JavaScript moderno
+    "module": "ES6",                  // Usar módulos ES6 (import/export)
+    "outDir": "./dist",               // Onde salvar os arquivos .js gerados
+    "rootDir": "./src",               // Onde ficam os arquivos .ts
+    "strict": true,                   // Ativar todas as verificações de tipo
+    "esModuleInterop": true,          // Compatibilidade melhor com bibliotecas comuns
+    "forceConsistentCasingInFileNames": true, // Evita erro em sistemas sensíveis a maiúsculas/minúsculas
+    "skipLibCheck": true,             // Pula checagem de arquivos .d.ts (opcional pra ganhar performance)
+    "sourceMap": true,                // Gerar .map files (útil se você quiser debugar o TS no navegador)
+    "allowJs": false,                 // Não permitir .js puro dentro da compilação
+    "moduleResolution": "node"        // Resolve módulos de forma moderna
+  },
+  "include": ["src/**/*"],            // Inclui tudo que está em src/
+  "exclude": ["node_modules", "dist"] // Exclui node_modules e dist
+}

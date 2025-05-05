@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel Caldas | Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/gc-logo10.png" type="image/png" sizes="32x32" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="#sobre" id="sobre-link">Sobre</a></li>
+        <li><a href="#freelas" id="freelas-link">Freelancers</a></li>
+        <li><a href="#projetos" id="projetos-link">Projetos Pessoais</a></li>
+        <li><a href="#contato" id="contato-link">Contato</a></li>
+      </ul>
+      <div class="language-selector">
+        <img src="img/brasil.png" alt="Português" id="btn-pt" class="flag-icon" />
+        <img src="img/eua.png" alt="English" id="btn-en" class="flag-icon" />
+      </div>
+    </nav>
+    <h1 id="titulo-principal">Olá, eu sou o Gabriel Caldas</h1>
+    <p id="subtitulo">Desenvolvedor Full Stack apaixonado por tecnologia.</p>
+
+    <a href="Curriculo-Gabriel-PT.pdf" download class="btn-download">📄 Download CV (PT)</a>
+    <a href="Curriculo-Gabriel-EN.pdf" download class="btn-download">📄 Download CV (EN)</a>
+  </header>
+
+  <main>
+    <div class="section-separator">
+      <span id="sobre-separador">Sobre Mim</span>
+    </div>
+    <section id="sobre" class="bg-dark">
+      <div class="sobre-container">
+        <img src="img/foto-perfil.jpeg" alt="Foto de Gabriel Caldas" class="foto-sobre" />
+        <div class="texto-sobre" id="texto-sobre"></div>
+      </div>
+    </section>
+
+    <div class="section-separator">
+      <span id="freelas-separador">Freelancers</span>
+    </div>
+    <section id="freelas" class="bg-darker">
+      <div class="cards-container">
+        <div class="card">
+          <h3>Luma Couto Doceria</h3>
+          <img src="img/luma-couto.png" alt="Luma Couto Doceria" class="project-image" />
+          <p id="desc-projeto1">Criação web do site para delivery da doceria Luma Couto.</p>
+          
+          <div class="btn-group">
+            <a href="#" target="_blank" class="btn-download btn-ver-projeto btn-black">🔗 Ver projeto</a>
+            <a href="#" target="_blank" class="btn-download btn-ver-github btn-black">🔗 Ver no GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Curso Fernando Ventura</h3>
+          <img src="img/curso-portugues.png" alt="Curso Fernando Ventura" class="project-image" />
+          <p id="desc-projeto2">Plataforma de ensino de português com módulos interativos.</p>
+          
+          <div class="btn-group">
+            <a href="#" target="_blank" class="btn-download btn-ver-projeto btn-black">🔗 Ver projeto</a>
+            <a href="#" target="_blank" class="btn-download btn-ver-github btn-black">🔗 Ver no GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator">
+      <span id="projetos-separador">Projetos Pessoais</span>
+    </div>
+    <section id="projetos" class="bg-dark">
+      <div class="cards-container">
+        <div class="card">
+          <h3>Doce Encanto</h3>
+          <img src="img/doce-encanto-banner.png" alt="Doce Encanto" class="project-image" />
+          <p id="desc-projeto3">Site de encomendas de doces com login e chat automático.</p>
+
+          <div class="btn-group">
+            <a href="https://projetodoceencanto.netlify.app/" target="_blank" class="btn-download btn-ver-projeto btn-black">🔗 Ver projeto</a>
+            <a href="https://github.com/devgabrielcaldas/doce-encanto" target="_blank" class="btn-download btn-ver-github btn-black">🔗 Ver no GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Aplicativo Financeiro</h3>
+          <img src="img/aplicativo-financeiro.png" alt="Aplicativo Financeiro" class="project-image" />
+          <p id="desc-projeto4">Aplicativo de controle financeiro pessoal com gráficos.</p>
+
+          <div class="btn-group">
+            <a href="#" target="_blank" class="btn-download btn-ver-projeto btn-black">🔗 Ver projeto</a>
+            <a href="#" target="_blank" class="btn-download btn-ver-github btn-black">🔗 Ver no GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Projeto 3</h3>
+          <p id="desc-projeto5">Jogo da memória feito em TypeScript puro com animações.</p>
+
+          <div class="btn-group">
+            <a href="#" target="_blank" class="btn-download btn-ver-projeto btn-black">🔗 Ver projeto</a>
+            <a href="#" target="_blank" class="btn-download btn-ver-github btn-black">🔗 Ver no GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Projeto 4</h3>
+          <p id="desc-projeto6">Site para ver onde vai passar cada jogo de futebol.</p>
+
+          <div class="btn-group">
+            <a href="#" target="_blank" class="btn-download btn-ver-projeto btn-black">🔗 Ver projeto</a>
+            <a href="#" target="_blank" class="btn-download btn-ver-github btn-black">🔗 Ver no GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator">
+      <span id="contato-separador">Contato</span>
+    </div>
+    <section id="contato" class="bg-darker">
+      <p id="texto-contato">Entre em contato comigo pelo WhatsApp clicando abaixo:</p>
+      <a href="https://wa.me/5561985357155?text=Olá%20Gabriel%2C%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20com%20você!" 
+         target="_blank" class="whatsapp-button">💬 Fale comigo no WhatsApp</a>
+    </section>
+  </main>
+  <script src="dist/main.js" defer></script>
+</body>
+</html>
