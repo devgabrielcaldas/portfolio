@@ -98,8 +98,8 @@ nav {
     background-color: #1f1f1f;
     border: 1px solid #00d9ff22;
     border-radius: 10px;
-    padding: 20px;
-    width: 300px;
+    padding: 16px;
+    width: 200px; /* diminuído de 300 */
     flex: 0 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     margin: 0 8px;
@@ -502,15 +502,21 @@ nav {
   display: none;
 }
 .carousel-container {
-  -ms-overflow-style: none;  /* IE e Edge */
-  scrollbar-width: none;  /* Firefox */
+  display: flex;
+  gap: 16px;
+  transition: transform 0.5s ease;
+  flex-wrap: nowrap;
 }
 
 .carousel-viewport {
-  overflow: hidden; /* melhor para carrossel horizontal */
+  display: flex;                /* torna container flexível */
+  align-items: center;          /* centraliza verticalmente */
+  justify-content: left;      /* centraliza horizontalmente os cards */
+  overflow: hidden;             /* esconde rolagem horizontal */
   position: relative;
   width: 100%;
-  max-width: 99%; /* ✅ permite ocupar toda a largura */
+  max-width: 97%;
+  min-height: 500px;            /* altura do espaço do carrossel */
   margin: 0 auto;
 }
 
