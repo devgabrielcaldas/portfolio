@@ -537,6 +537,26 @@ nav {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .menu {
+    flex-wrap: wrap; /* Permite quebrar linha */
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .menu li {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .language-selector {
+    position: static; /* deixa fluir com o layout */
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
 
   
   
