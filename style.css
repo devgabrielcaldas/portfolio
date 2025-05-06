@@ -99,9 +99,13 @@ nav {
     border: 1px solid #00d9ff22;
     border-radius: 10px;
     padding: 20px;
-    width: calc(33.333% - 10px);
+    width: 300px;
+    flex: 0 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 0 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center center;
+    z-index: 1;
   }
   
   .card h3 {
@@ -124,17 +128,14 @@ nav {
     transition: background-color 0.3s ease;
   }
   
-  .card a:hover {
-    background-color: #00a3c4;
-  }
-  
   .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 217, 255, 0.3);
-  }
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 217, 255, 0.3);
+  z-index: 2;
+}
   
   /* Centralizar conteúdo do header */
-header > nav, header > h1, header > p {
+    header > nav, header > h1, header > p {
     max-width: 900px;
     margin: auto;
   }
@@ -252,6 +253,9 @@ header > nav, header > h1, header > p {
   padding: 50px 20px;
   border-radius: 12px;
   margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  overflow: visible; /* ✅ permite as setas ultrapassarem */
 }
 
 .sobre-container {
@@ -449,6 +453,82 @@ header > nav, header > h1, header > p {
 
 .btn-group a:hover {
   background-color: #00bcd4;
+}
+
+.section-wrapper {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.5s ease;
+  flex-wrap: nowrap;
+  overflow: visible; /* mantém o hover */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #00d9ff;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+
+/* OCULTA SCROLLBAR VISUAL MAS MANTÉM FUNCIONALIDADE */
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+.carousel-container {
+  -ms-overflow-style: none;  /* IE e Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.carousel-viewport {
+  overflow: hidden; /* melhor para carrossel horizontal */
+  position: relative;
+  width: 100%;
+  max-width: 99%; /* ✅ permite ocupar toda a largura */
+  margin: 0 auto;
+}
+
+#contato {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#texto-contato {
+  margin-bottom: 20px;
+}
+
+.contato-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 

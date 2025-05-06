@@ -22,10 +22,11 @@ const translations = {
         btnVerProjeto: "🔗 Ver projeto",
         btnVerGitHub: "🔗 Ver no GitHub",
         btnWhatsapp: "💬 Fale comigo no WhatsApp",
-        menuSobre: "Sobre",
+        menuSobre: "Sobre Mim",
         menuFreelas: "Freelancers",
         menuProjetos: "Projetos Pessoais",
         menuContato: "Contato",
+        whatsappMsg: "Olá Gabriel, vi seu portfólio e gostaria de conversar com você!",
     },
     en: {
         sobreSeparador: "About Me",
@@ -45,10 +46,11 @@ const translations = {
         btnVerProjeto: "🔗 View project",
         btnVerGitHub: "🔗 View on GitHub",
         btnWhatsapp: "💬 Talk to me on WhatsApp",
-        menuSobre: "About",
+        menuSobre: "About me",
         menuFreelas: "Freelancers",
         menuProjetos: "Personal Projects",
         menuContato: "Contact",
+        whatsappMsg: "Hi Gabriel, I saw your portfolio and would like to talk to you!",
     }
 };
 function changeLanguage(lang) {
@@ -80,7 +82,41 @@ function changeLanguage(lang) {
     if (whatsappButton) {
         whatsappButton.innerHTML = translations[lang].btnWhatsapp;
     }
+    const encodedMsg = encodeURIComponent(translations[lang].whatsappMsg);
+    const whatsappBtn = document.querySelector('.whatsapp-button');
+    if (whatsappBtn) {
+        whatsappBtn.innerHTML = translations[lang].btnWhatsapp;
+        whatsappBtn.href = `https://wa.me/5561985357155?text=${encodedMsg}`;
+    }
 }
 document.getElementById('btn-pt').addEventListener('click', () => changeLanguage('pt'));
 document.getElementById('btn-en').addEventListener('click', () => changeLanguage('en'));
+function setupCarousel(carouselId, prevBtnId, nextBtnId, cardsPerView = 2) {
+    const carousel = document.getElementById(carouselId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    const cards = carousel.querySelectorAll('.card');
+    let currentIndex = 0;
+    function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth + 16; // gap
+        const offset = -currentIndex * cardWidth;
+        carousel.style.transform = `translateX(${offset}px)`;
+    }
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex -= cardsPerView;
+            updateCarousel();
+        }
+    });
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex + cardsPerView < cards.length) {
+            currentIndex += cardsPerView;
+            updateCarousel();
+        }
+    });
+    updateCarousel();
+}
+// Dentro do DOMContentLoaded
+setupCarousel("freelas-carousel", "freelas-prev", "freelas-next", 2);
+setupCarousel("projetos-carousel", "projetos-prev", "projetos-next", 2);
 //# sourceMappingURL=main.js.map
