@@ -117,6 +117,7 @@ function setupCarousel(carouselId, prevBtnId, nextBtnId, cardsPerView = 2) {
     updateCarousel();
 }
 // Dentro do DOMContentLoaded
-setupCarousel("freelas-carousel", "freelas-prev", "freelas-next", 2);
-setupCarousel("projetos-carousel", "projetos-prev", "projetos-next", 2);
+const cardsPerView = window.innerWidth <= 768 ? 1 : 2;
+setupCarousel("freelas-carousel", "freelas-prev", "freelas-next", cardsPerView);
+setupCarousel("projetos-carousel", "projetos-prev", "projetos-next", cardsPerView);
 //# sourceMappingURL=main.js.map
