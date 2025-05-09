@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projeto em Desenvolvimento</title>
+  <title id="page-title">Projeto em Desenvolvimento</title>
   <link rel="icon" href="img/gc-logo10.png" type="image/png" sizes="32x32" />
   <style>
     body {
@@ -49,8 +49,38 @@
 <body>
   <div class="aviso-container">
     <img src="https://cdn-icons-png.flaticon.com/512/11332/11332972.png" alt="Ícone de Software Testing" width="100" />
-    <h1>Projeto em desenvolvimento</h1>
-    <p>Publicação em breve</p>
+    <h1 id="dev-title">Projeto em desenvolvimento</h1>
+    <p id="dev-subtitle">Publicação em breve</p>
   </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const lang = localStorage.getItem('lang') || 'pt';
+    const messages = {
+      pt: {
+        title: "Projeto em Desenvolvimento",
+        devTitle: "Projeto em desenvolvimento",
+        devSubtitle: "Publicação em breve"
+      },
+      en: {
+        title: "Project in Development",
+        devTitle: "Project in development",
+        devSubtitle: "Coming soon"
+      }
+    };
+
+    const t = messages[lang];
+
+    console.log("Idioma detectado:", lang); // 👈 debug útil
+    document.title = t.title;
+    const titleEl = document.getElementById('page-title');
+    const devTitleEl = document.getElementById('dev-title');
+    const devSubtitleEl = document.getElementById('dev-subtitle');
+
+    if (titleEl) titleEl.textContent = t.title;
+    if (devTitleEl) devTitleEl.textContent = t.devTitle;
+    if (devSubtitleEl) devSubtitleEl.textContent = t.devSubtitle;
+  });
+</script>
 </body>
 </html>

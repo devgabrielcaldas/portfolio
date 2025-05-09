@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("Portfólio carregado com sucesso!");
-  changeLanguage('pt'); // Começar em português
+  const savedLang = (localStorage.getItem('lang') === 'en') ? 'en' : 'pt';
+  console.log("Portfólio carregado com sucesso! Idioma:", savedLang);
+  changeLanguage(savedLang);
 });
 
 const translations = {
@@ -55,6 +56,8 @@ const translations = {
 };
 
 function changeLanguage(lang: "pt" | "en") {
+  localStorage.setItem('lang', lang);
+
   document.getElementById('sobre-separador')!.textContent = translations[lang].sobreSeparador;
   document.getElementById('freelas-separador')!.textContent = translations[lang].freelasSeparador;
   document.getElementById('projetos-separador')!.textContent = translations[lang].projetosSeparador;
@@ -90,16 +93,26 @@ function changeLanguage(lang: "pt" | "en") {
   }
 
   const encodedMsg = encodeURIComponent(translations[lang].whatsappMsg);
-const whatsappBtn = document.querySelector('.whatsapp-button') as HTMLAnchorElement;
+  const whatsappBtn = document.querySelector('.whatsapp-button') as HTMLAnchorElement;
 
-if (whatsappBtn) {
-  whatsappBtn.innerHTML = translations[lang].btnWhatsapp;
-  whatsappBtn.href = `https://wa.me/5561985357155?text=${encodedMsg}`;
-}
+  if (whatsappBtn) {
+    whatsappBtn.innerHTML = translations[lang].btnWhatsapp;
+    whatsappBtn.href = `https://wa.me/5561985357155?text=${encodedMsg}`;
+  }
 }
 
-document.getElementById('btn-pt')!.addEventListener('click', () => changeLanguage('pt'));
-document.getElementById('btn-en')!.addEventListener('click', () => changeLanguage('en'));
+// ⬇️ Agora os botões com reload para garantir que a página reflita a nova linguagem
+document.getElementById('btn-pt')!.addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.setItem('lang', 'pt');
+  location.reload();
+});
+
+document.getElementById('btn-en')!.addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.setItem('lang', 'en');
+  location.reload();
+});
 
 function setupCarousel(carouselId: string, prevBtnId: string, nextBtnId: string, cardsPerView = 2) {
   const carousel = document.getElementById(carouselId)!;
@@ -109,7 +122,7 @@ function setupCarousel(carouselId: string, prevBtnId: string, nextBtnId: string,
   let currentIndex = 0;
 
   function updateCarousel() {
-    const cardWidth = (cards[0] as HTMLElement).offsetWidth + 16; // gap
+    const cardWidth = (cards[0] as HTMLElement).offsetWidth + 16;
     const offset = -currentIndex * cardWidth;
     (carousel as HTMLElement).style.transform = `translateX(${offset}px)`;
   }
@@ -131,8 +144,6 @@ function setupCarousel(carouselId: string, prevBtnId: string, nextBtnId: string,
   updateCarousel();
 }
 
-// Dentro do DOMContentLoaded
 const cardsPerView = window.innerWidth <= 768 ? 1 : 2;
-
 setupCarousel("freelas-carousel", "freelas-prev", "freelas-next", cardsPerView);
 setupCarousel("projetos-carousel", "projetos-prev", "projetos-next", cardsPerView);
