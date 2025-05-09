@@ -28,6 +28,7 @@ const translations = {
     menuProjetos: "Projetos Pessoais",
     menuContato: "Contato",
     whatsappMsg: "Olá Gabriel, vi seu portfólio e gostaria de conversar com você!",
+    habilidadesSeparador: "Habilidades",
   },
   en: {
     sobreSeparador: "About Me",
@@ -52,6 +53,7 @@ const translations = {
     menuProjetos: "Personal Projects",
     menuContato: "Contact",
     whatsappMsg: "Hi Gabriel, I saw your portfolio and would like to talk to you!",
+    habilidadesSeparador: "Skills",
   }
 };
 
@@ -59,6 +61,7 @@ function changeLanguage(lang: "pt" | "en") {
   localStorage.setItem('lang', lang);
 
   document.getElementById('sobre-separador')!.textContent = translations[lang].sobreSeparador;
+  document.getElementById('habilidades-separador')!.textContent = translations[lang].habilidadesSeparador;
   document.getElementById('freelas-separador')!.textContent = translations[lang].freelasSeparador;
   document.getElementById('projetos-separador')!.textContent = translations[lang].projetosSeparador;
   document.getElementById('contato-separador')!.textContent = translations[lang].contatoSeparador;

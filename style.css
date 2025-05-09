@@ -557,6 +557,26 @@ nav {
   }
 }
 
+.habilidades-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0px 10px 0px;
+}
+
+.habilidade-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(55%) sepia(97%) saturate(746%) hue-rotate(162deg) brightness(103%) contrast(101%) drop-shadow(0 0 5px #00d9ff88);
+  transition: transform 0.3s ease;
+}
+
+.habilidade-icon:hover {
+  transform: scale(1.1);
+}
+
 
   
   
