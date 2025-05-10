@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const translations = {
     pt: {
         sobreSeparador: "Sobre Mim",
+        habilidadesSeparador: "Habilidades",
         freelasSeparador: "Freelancers",
         projetosSeparador: "Projetos Pessoais",
         contatoSeparador: "Contato",
@@ -20,6 +21,7 @@ const translations = {
         projeto4desc: "Aplicativo de controle financeiro pessoal com gráficos.",
         projeto5desc: "Jogo da memória feito em TypeScript puro com animações.",
         projeto6desc: "Site para saber onde vai passar o jogo de futebol do seu time.",
+        projeto7desc: "Jogo da cobrinha feito em TypeScript puro com animações.",
         btnVerProjeto: "🔗 Ver projeto",
         btnVerGitHub: "🔗 Ver no GitHub",
         btnWhatsapp: "💬 Fale comigo no WhatsApp",
@@ -27,11 +29,11 @@ const translations = {
         menuFreelas: "Freelancers",
         menuProjetos: "Projetos Pessoais",
         menuContato: "Contato",
-        whatsappMsg: "Olá Gabriel, vi seu portfólio e gostaria de conversar com você!",
-        habilidadesSeparador: "Habilidades",
+        whatsappMsg: "Olá Gabriel, vi seu portfólio e gostaria de conversar com você!"
     },
     en: {
         sobreSeparador: "About Me",
+        habilidadesSeparador: "Skills",
         freelasSeparador: "Freelancers",
         projetosSeparador: "Personal Projects",
         contatoSeparador: "Contact",
@@ -45,6 +47,7 @@ const translations = {
         projeto4desc: "Financial control application with charts.",
         projeto5desc: "Memory game built with pure TypeScript and animations.",
         projeto6desc: "Website showing where your soccer team match will be broadcast.",
+        projeto7desc: "Snake game built with pure TypeScript and animations.",
         btnVerProjeto: "🔗 View project",
         btnVerGitHub: "🔗 View on GitHub",
         btnWhatsapp: "💬 Talk to me on WhatsApp",
@@ -52,8 +55,7 @@ const translations = {
         menuFreelas: "Freelancers",
         menuProjetos: "Personal Projects",
         menuContato: "Contact",
-        whatsappMsg: "Hi Gabriel, I saw your portfolio and would like to talk to you!",
-        habilidadesSeparador: "Skills",
+        whatsappMsg: "Hi Gabriel, I saw your portfolio and would like to talk to you!"
     }
 };
 function changeLanguage(lang) {
@@ -77,24 +79,19 @@ function changeLanguage(lang) {
     document.getElementById('desc-projeto4').textContent = translations[lang].projeto4desc;
     document.getElementById('desc-projeto5').textContent = translations[lang].projeto5desc;
     document.getElementById('desc-projeto6').textContent = translations[lang].projeto6desc;
+    document.getElementById('desc-projeto7').textContent = translations[lang].projeto7desc;
     document.querySelectorAll('.btn-ver-projeto').forEach(btn => {
         btn.innerHTML = translations[lang].btnVerProjeto;
     });
     document.querySelectorAll('.btn-ver-github').forEach(btn => {
         btn.innerHTML = translations[lang].btnVerGitHub;
     });
-    const whatsappButton = document.querySelector('.whatsapp-button');
-    if (whatsappButton) {
-        whatsappButton.innerHTML = translations[lang].btnWhatsapp;
-    }
-    const encodedMsg = encodeURIComponent(translations[lang].whatsappMsg);
     const whatsappBtn = document.querySelector('.whatsapp-button');
     if (whatsappBtn) {
         whatsappBtn.innerHTML = translations[lang].btnWhatsapp;
-        whatsappBtn.href = `https://wa.me/5561985357155?text=${encodedMsg}`;
+        whatsappBtn.href = `https://wa.me/5561985357155?text=${encodeURIComponent(translations[lang].whatsappMsg)}`;
     }
 }
-// ⬇️ Agora os botões com reload para garantir que a página reflita a nova linguagem
 document.getElementById('btn-pt').addEventListener('click', (e) => {
     e.preventDefault();
     localStorage.setItem('lang', 'pt');

@@ -577,6 +577,21 @@ nav {
   transform: scale(1.1);
 }
 
+@media (max-width: 768px) {
+  .habilidades-container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .habilidade-icon {
+    width: 36px;
+    height: auto;
+    margin: 0 8px;
+  }
+}
+
 
   
   
