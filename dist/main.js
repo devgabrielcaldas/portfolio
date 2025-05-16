@@ -23,6 +23,7 @@ const translations = {
         projeto6desc: "Site para saber onde vai passar o jogo de futebol do seu time.",
         projeto7desc: "Jogo da cobrinha feito em TypeScript puro com animações.",
         projeto8desc: "Plataforma de gerenciamento de tarefas estilo Kanban",
+        projeto9desc: "Site para a designer Camila Oliveira publicar seus trabalhos.",
         btnVerProjeto: "🔗 Ver projeto",
         btnVerGitHub: "🔗 Ver no GitHub",
         btnWhatsapp: "💬 Fale comigo no WhatsApp",
@@ -50,6 +51,7 @@ const translations = {
         projeto6desc: "Website showing where your soccer team match will be broadcast.",
         projeto7desc: "Snake game built with pure TypeScript and animations.",
         projeto8desc: "Kanban-style task management platform",
+        projeto9desc: "Website for designer Camila Oliveira to publish her work.",
         btnVerProjeto: "🔗 View project",
         btnVerGitHub: "🔗 View on GitHub",
         btnWhatsapp: "💬 Talk to me on WhatsApp",
@@ -83,6 +85,7 @@ function changeLanguage(lang) {
     document.getElementById('desc-projeto6').textContent = translations[lang].projeto6desc;
     document.getElementById('desc-projeto7').textContent = translations[lang].projeto7desc;
     document.getElementById('desc-projeto8').textContent = translations[lang].projeto8desc;
+    document.getElementById('desc-projeto9').textContent = translations[lang].projeto9desc;
     document.querySelectorAll('.btn-ver-projeto').forEach(btn => {
         btn.innerHTML = translations[lang].btnVerProjeto;
     });
